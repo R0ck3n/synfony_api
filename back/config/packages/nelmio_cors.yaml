@@ -1,0 +1,15 @@
+# config/packages/nelmio_cors.yaml
+nelmio_cors:
+    defaults:
+        allow_credentials: false
+        allow_origin: ["*"] # Vous pouvez restreindre cela à ['http://localhost:3000'] pour plus de sécurité
+        allow_headers: ["Content-Type", "Authorization"]
+        expose_headers: []
+        allow_methods: ["GET", "OPTIONS", "POST", "PUT", "DELETE"]
+        max_age: 3600
+    paths:
+        "^/api/": # Ajoutez cette ligne pour restreindre les règles CORS aux chemins API spécifiques
+            allow_origin: ["*"] # Vous pouvez restreindre cela à ['http://localhost:3000'] pour plus de sécurité
+            allow_headers: ["Content-Type", "Authorization"]
+            allow_methods: ["GET", "OPTIONS", "POST", "PUT", "DELETE"]
+            max_age: 3600
